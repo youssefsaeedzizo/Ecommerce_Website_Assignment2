@@ -1,0 +1,28 @@
+<div class="my-5 ">
+
+    <div class="py-5 bg-body-tertiary container-fluid">
+       <h1>My Wish List :</h1>
+
+        <div class="py-4 border-bottom border-3 row justify-content-between align-items-center " *ngFor="let product of products">
+            <div class="col-md-8">
+                <div class="row align-items-center">
+                    <div class="col-md-3"><img class="w-100" [src]="product.imageCover" alt=""></div>
+                    <div class="col-md-9">
+                        <h5>{{product.title}}</h5>
+                        <h6 class="fw-bolder" > <span class="text-main">{{product.price | currency}}</span></h6>
+                        <button  (click)="removeFromWishList(product._id)"  class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-trash fa-lg "></i>Remove </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <button (click)="addProductToCart(product._id)" class="btn btn-outline-success  w-75 m-auto">Add To Cart</button>
+            </div>
+        </div>
+
+    </div>
+    <ng-template #noData class="py-5 my-5">
+        <div class="alert alert-danger">
+            <p>Cart Is Empty</p>
+        </div>
+    </ng-template>
+</div>

@@ -1,0 +1,14 @@
+<div>
+    <form (ngSubmit)="payByCard()"  [formGroup]="paymentForm" action="" class="py-3 w-75 m-auto">
+        <label for="details" class="my-2">details</label>
+        <input formControlName = "details" type="text" class="form-control w-100 " id="details" >
+        <label for="city" class="my-2">city</label>
+        <input formControlName="city" type="text" class="form-control w-100 " id="city" >
+        <label for="phone" class ="my-2">phone</label>
+        <input formControlName = "phone" type="tel" class="form-control w-100 " id="phone" >
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-success mx-2  my-2">Pay By Card <i class="fa-brands fa-lg fa-cc-visa"></i></button>
+        </div>
+        
+    </form>
+</div>

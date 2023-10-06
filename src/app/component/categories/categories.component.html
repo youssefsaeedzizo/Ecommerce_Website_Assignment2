@@ -1,0 +1,20 @@
+<div class="row g-5">
+    <div class="col-md-4" *ngFor="let category of CategoriesData" >
+        <div class="product cursor-pointer border" (click)="showSubCategories(category._id,category.name)" >
+            <img [src]="category.image" alt="" class="w-100" style="height: 300px;" >
+            <h3 class="text-main text-center fw-bolder my-3">{{category.name}}</h3>
+        </div>
+    </div>
+
+</div>
+
+<div id="category-info" class="py-3" style="display: none;">
+    <h1 class="text-main text-center fw-bolder py-2">{{categoryName}} SubCategories</h1>
+    <div class="row g-4">
+        <div class="col-md-4" *ngFor="let subCategory of subCategories">
+            <div class="subCategory product cursor-pointer border">
+                <h5 class="fw-bolder my-3 text-center">{{subCategory.name}}</h5>
+            </div>
+        </div>
+    </div>
+</div>

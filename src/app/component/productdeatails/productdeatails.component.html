@@ -1,0 +1,30 @@
+<div class="py-5">
+    <div *ngIf="product != null" class="row align-items-center g-3">
+        <div class="col-md-4">
+            <owl-carousel-o [options]="customOptions">
+
+                <ng-container *ngFor="let slide of product.images">
+                  <ng-template carouselSlide >
+                    <img class="w-100" [src]="slide" >
+                  </ng-template>
+                </ng-container>
+            
+              </owl-carousel-o>
+        </div>
+        <div class="col-md-8 ">
+            <div class="">
+
+                <h5>{{product.title}}</h5>
+                <p>{{product.description}}</p>
+                <h6 class="text-main ">{{product.category.name}}</h6>
+                <div class="d-flex justify-content-between">
+                    <h6>{{product.price | currency}}</h6>
+                    <span>{{product.ratingsAverage }}<i class="fa-solid fa-star rating-color"></i></span>
+                    
+                </div>
+                <button (click)="addProductToCart(product._id)" class="btn w-100 my-3 bg-main text-white d-block w-75 mb-3 m-auto">+Add</button>
+            </div>
+        </div>
+    </div>
+
+</div>
